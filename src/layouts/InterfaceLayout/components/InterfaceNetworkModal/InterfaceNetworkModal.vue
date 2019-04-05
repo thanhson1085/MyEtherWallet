@@ -33,6 +33,7 @@
         >
           <div class="network-title">
             <div class="network-icon">
+              <crypto-icons :crypto="key" />
               <img :src="Networks[key][0].type.icon" />
             </div>
             <h4 :class="key.toLowerCase()">{{ key }}</h4>
@@ -268,7 +269,7 @@
 
 <script>
 import store from 'store';
-
+import CryptoIcons from '@/components/CryptoIcons';
 import InterfaceBottomText from '@/components/InterfaceBottomText';
 import * as networkTypes from '@/networks/types';
 import Misc from '@/helpers/misc';
@@ -277,7 +278,8 @@ import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    'interface-bottom-text': InterfaceBottomText
+    'interface-bottom-text': InterfaceBottomText,
+    'crypto-icons': CryptoIcons
   },
   data() {
     return {
